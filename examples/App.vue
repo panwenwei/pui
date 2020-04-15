@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <HelloWorld msg="P-UI"/>
+    <HelloWorld msg="WENWEN ME !"/>
     <div>
-      <p-button>nihao</p-button>
+      <p-button @click="loadData">load</p-button>
+      <p-canvas width="650" height="650" style="border: 1px solid;"></p-canvas>
     </div>
   </div>
 </template>
@@ -12,8 +13,18 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
+  data () {
+    return {
+
+    }
+  },
   components: {
     HelloWorld
+  },
+  methods: {
+    loadData () {
+      console.log('load')
+    }
   }
 }
 </script>

@@ -1,8 +1,10 @@
 
 import PButton from './Button'
+import Canvas from './Canvas'
 
 const components = [
-  PButton
+  PButton,
+  Canvas
 ]
 
 const install = function (Vue) {
