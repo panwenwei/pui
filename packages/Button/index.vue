@@ -1,5 +1,5 @@
 <template>
-  <button class="p-button" @click="bindClick">
+  <button class="p-button"  :class="`p-button-${type}`" @click="bindClick" type="button">
      <span>
        <slot></slot>
      </span>
@@ -9,6 +9,12 @@
 <script>
 export default {
   name: 'p-button',
+  props: {
+    type: {
+      type: String,
+      default: 'default'
+    }
+  },
   methods: {
     bindClick () {
       this.$emit('click')
