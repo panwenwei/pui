@@ -34,8 +34,32 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-.p-button {
+<style lang="less" >
+@import  "../style/index.less";
+@btn-prefix: ~"@{prefix}button";
+.btn-color(@color, @percent: 10%) {
+  background-color: @color;
+  border-color: darken(@color, 2%);
+  color: @white;
+  &:hover {
+    border-color: lighten(@color, @percent);
+    background-color: lighten(@color, @percent);
+  }
+  &:active {
+    border-color: darken(@color, 8%);
+    background-color: darken(@color, 8%);
+  }
+  &.is-disabled,
+  &.is-disabled:active,
+  &.is-disabled:focus,
+  &.is-disabled:hover {
+      color: @white;
+      background-color: tint(@color,60%);
+      border-color: tint(@color,60%);
+  }
+
+}
+.@{btn-prefix} {
     cursor: pointer;
     display: inline-block;
     line-height: 1;
@@ -44,7 +68,8 @@ export default {
     -webkit-appearance: none;
     outline: none;
     border: 1px solid #dcdddd;
-    background: #fff;
+    background: @white;
+    background-color: @white;
     color: #221e1f;
     padding: 12px 20px;
     font-size: 14px;
@@ -73,95 +98,31 @@ export default {
       background-color: #fff;
       border-color: #ebeef5;
   }
-}
-// 主颜色
-.p-button-primary {
-  color: #fff;
-  background-color: #409eff;
-  border-color: #409eff;
-  &:focus, &:hover {
-    background: #66b1ff;
-    border-color: #66b1ff;
-    color: #fff;
-  }
-  &:active {
-    background: #3a8ee6;
-    border-color: #3a8ee6;
-    color: #fff;
-  }
-  // disabled
-  &.is-disabled,
-  &.is-disabled:active,
-  &.is-disabled:focus,
-  &.is-disabled:hover {
-      color: #fff;
-      background-color: #a0cfff;
-      border-color: #a0cfff;
-  }
 
-}
+  &.@{btn-prefix} {
+     // 主颜色
+     &-primary {
+      .btn-color(@primary-color);
+    }
+    // 成功色
+    &-success {
+      .btn-color(@success-color);
+    }
 
-.p-button-success {
-  color: #fff;
-  background-color: #67c23a;
-  border-color: #67c23a;
-  &:focus, &:hover {
-    background: #85ce61;
-    border-color: #85ce61;
-    color: #fff;
-  }
-  &:active {
-    background: #5daf34;
-    border-color: #5daf34;
-    color: #fff;
-  }
-}
+    // info色
+    &-info {
+      .btn-color(@info-color);
+    }
 
-.p-button-info {
-  color: #fff;
-  background-color: #909399;
-  border-color: #909399;
-  &:focus, &:hover {
-    background: #a6a9ad;
-    border-color: #a6a9ad;
-    color: #fff;
-  }
-  &:active {
-    background: #82848a;
-    border-color: #82848a;
-    color: #fff;
-  }
-}
+    // warning色
+    &-warning {
+      .btn-color(@warning-color);
+    }
 
-.p-button-warning {
-  color: #fff;
-  background-color: #e6a23c;
-  border-color: #e6a23c;
-  &:focus, &:hover {
-    background: #ebb563;
-    border-color: #ebb563;
-    color: #fff;
-  }
-  &:active {
-    background: #cf9236;
-    border-color: #cf9236;
-    color: #fff;
-  }
-}
-
-.p-button-danger {
-    color: #fff;
-    background-color: #f56c6c;
-    border-color: #f56c6c;
-  &:focus, &:hover {
-    background: #f78989;
-    border-color: #f78989;
-    color: #fff;
-  }
-  &:active {
-    background: #dd6161;
-    border-color: #dd6161;
-    color: #fff;
+    // error
+    &-danger {
+      .btn-color(@error-color);
+    }
   }
 }
 

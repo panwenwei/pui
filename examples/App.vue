@@ -5,6 +5,7 @@
       <p-button @click="loadData">load</p-button>
       <p-canvas width="650" height="650" style="border: 1px solid;"></p-canvas>
     </div>
+    <div class="nihao"></div>
   </div>
 </template>
 
@@ -30,12 +31,26 @@ export default {
 </script>
 
 <style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.nihaoMixin(){
+@function:~`(function(){
+  this. wenwen = function (color, index) {
+    var isLight = index <= 6;
+    return '#cfc';
+  }
+})()`
+}
+
+.nihaoMixin();
+
+.mixin() {
+  @bgcolor: #C0C0C0;
+}
+
+.nihao {
+  .mixin();
+  width: 200px;
+  height: 200px;
+  background: color(~`wenwen('#ccc',1)`);
+  background-color: tint(#409eff,50%);
 }
 </style>
