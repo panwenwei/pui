@@ -19,6 +19,7 @@ module.exports = {
           title:'基本组件',
           collapsable: false,
           children: [
+            'base/layout',
             'base/button',
             'base/icon',
           ]
