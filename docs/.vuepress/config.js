@@ -23,6 +23,13 @@ module.exports = {
             'base/button',
             'base/icon',
           ]
+        },
+        {
+          title:'表单组件',
+          collapsable: false,
+          children: [
+            'form/input',
+          ]
         }
       ]
     }
