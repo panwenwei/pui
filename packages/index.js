@@ -1,11 +1,13 @@
 
 import PButton from './Button'
+import Icon from './Icon'
 import Canvas from './Canvas'
 import Row from './Row'
 import Col from './Col'
 
 const components = [
   PButton,
+  Icon,
   Canvas,
   Row,
   Col

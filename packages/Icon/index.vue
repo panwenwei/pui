@@ -1,5 +1,5 @@
 <template>
-  <i :class="'p-icon-' + name"></i>
+  <i class="pui-icon" :class="'icon-' + name"></i>
 </template>
 <script>
 export default {
@@ -9,3 +9,6 @@ export default {
   }
 }
 </script>
+<style lang="less">
+@import (less) "../style/font/iconfont.less";
+</style>

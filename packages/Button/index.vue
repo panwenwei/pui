@@ -8,6 +8,7 @@
   @click="bindClick" type="button"
   >
      <span>
+       <i v-if="icon" class="pui-icon" :class="'icon-' + icon"></i>
        <slot></slot>
      </span>
   </button>
@@ -24,7 +25,11 @@ export default {
     disabled: {
       type: Boolean,
       default: false
-    }
+    },
+    icon: {
+      type: String,
+      default: ''
+    },
   },
   methods: {
     bindClick () {
